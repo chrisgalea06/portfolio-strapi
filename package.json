@@ -1,0 +1,37 @@
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "license": "MIT",
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.11",
+    "@strapi/plugin-i18n": "4.14.0",
+    "@strapi/plugin-users-permissions": "4.14.0",
+    "@strapi/strapi": "4.14.0",
+    "mysql": "2.18.1",
+    "mysql2": "^3.6.1",
+    "pg": "^8.11.5",
+    "pg-connection-string": "^2.6.4",
+    "strapi-plugin-fuzzy-search": "^2.2.1",
+    "strapi-plugin-populate-deep": "^3.0.1",
+    "strapi-plugin-rest-cache": "^4.2.8",
+    "strapi-plugin-slugify": "^2.3.5"
+  },
+  "engines": {
+    "node": ">=18.17.0 || >=20.5.0",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "57b90789-85da-4410-8678-2601e271d869"
+  }
+}

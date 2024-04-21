@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_testimony_testimonies",
+  "info": {
+    "displayName": "testimony"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "comment": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "rate": {
+      "type": "decimal",
+      "max": 5,
+      "min": 1
+    }
+  }
+}

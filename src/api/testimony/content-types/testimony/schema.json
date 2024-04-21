@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "testimonies",
+  "info": {
+    "singularName": "testimony",
+    "pluralName": "testimonies",
+    "displayName": "testimony",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "item_testimony": {
+      "type": "component",
+      "repeatable": true,
+      "component": "testimony.testimony"
+    }
+  }
+}

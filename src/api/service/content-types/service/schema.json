@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "sub_title": {
+      "type": "text"
+    },
+    "list_services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "list-item.list-item"
+    }
+  }
+}
