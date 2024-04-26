@@ -18,6 +18,7 @@ export interface ListItemListItem extends Schema.Component {
       >;
     image: Attribute.Media;
     images: Attribute.Media;
+    LinkButton: Attribute.String;
   };
 }
 
