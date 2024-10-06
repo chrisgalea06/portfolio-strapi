@@ -9,10 +9,9 @@ module.exports = [
         "https://www.admin.christophergalea.com",
         "https://www.christophergalea.com",
         "https://christophergalea.com",
-      ], // Add your frontend's domain here
+      ],
     },
   },
-  "strapi::security",
   {
     name: "strapi::security",
     config: {
@@ -25,7 +24,6 @@ module.exports = [
       },
     },
   },
-  "strapi::cors",
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
