@@ -1,5 +1,12 @@
 module.exports = [
   "strapi::errors",
+  {
+    name: "strapi::cors",
+    config: {
+      enabled: true,
+      origin: ["https://admin.christophergalea.com"], // Add your frontend's domain here
+    },
+  },
   "strapi::security",
   {
     name: "strapi::security",
