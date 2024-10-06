@@ -3,7 +3,6 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      enabled: true,
       origin: [
         "https://admin.christophergalea.com",
         "https://www.admin.christophergalea.com",
