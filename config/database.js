@@ -6,11 +6,11 @@ module.exports = ({ env }) => {
   const connections = {
     postgres: {
       connection: {
-        connectionString: env("DATABASE_URL"),
+        //connectionString: env("DATABASE_URL"),
         host: env("DATABASE_HOST", "localhost"),
         port: env.int("DATABASE_PORT", 5432),
-        database: env("DATABASE_NAME", "portfolio_strapi"),
-        user: env("DATABASE_USERNAME", "christophergalea"),
+        database: env("DATABASE_NAME", ""),
+        user: env("DATABASE_USERNAME", ""),
         password: env("DATABASE_PASSWORD", ""),
         ssl: false,
         schema: env("DATABASE_SCHEMA", "public"),
