@@ -19,6 +19,7 @@ services:
       DATABASE_SSL: ${DATABASE_SSL}
       NODE_ENV: production
       PUBLIC_URL: https://admin.christophergalea.com
+      STRAPI_ADMIN_BACKEND_URL:
 
   # PostgreSQL Database Service
   postgres:

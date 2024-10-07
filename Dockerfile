@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 # Set the working directory inside the container
 WORKDIR /app
-    
+
 # Copy only package.json and package-lock.json (or yarn.lock) first
 COPY package*.json ./
 
@@ -24,4 +24,4 @@ COPY . .
 EXPOSE 1337
 
 # Start the application
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "build"]
