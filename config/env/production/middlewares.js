@@ -9,6 +9,14 @@ module.exports = [
         "https://www.christophergalea.com",
         "https://christophergalea.com",
       ],
+      headers: [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "X-CSRF-Token",
+        "Origin",
+      ],
+      expose: ["Authorization"],
     },
   },
   {
