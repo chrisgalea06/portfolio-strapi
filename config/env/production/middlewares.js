@@ -32,7 +32,12 @@ module.exports = [
     },
   },
   "strapi::poweredBy",
-  "strapi::logger",
+  {
+    name: "strapi::logger",
+    config: {
+      level: "debug", // Set this to "debug" for more detailed logs
+    },
+  },
   "strapi::query",
   "strapi::body",
   "strapi::session",
