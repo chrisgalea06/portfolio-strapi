@@ -19,7 +19,9 @@ services:
       DATABASE_SSL: ${DATABASE_SSL}
       NODE_ENV: production
       PUBLIC_URL: https://admin.christophergalea.com
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      STRAPI_ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+
   # PostgreSQL Database Service
   postgres:
     image: postgres:13
