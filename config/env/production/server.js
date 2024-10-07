@@ -2,7 +2,7 @@ module.exports = ({ env }) => ({
   proxy: true,
   host: "0.0.0.0",
   port: process.env.PORT,
-  url: "https://admin.christophergalea.com", // Public URL for the Strapi instance
+  url: env("PUBLIC_URL", "https://admin.christophergalea.com"),
   app: {
     keys: env.array("APP_KEYS"),
   },
