@@ -18,6 +18,7 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       DATABASE_SSL: ${DATABASE_SSL}
       NODE_ENV: production
+      PUBLIC_URL: https://admin.christophergalea.com
 
   # PostgreSQL Database Service
   postgres:
