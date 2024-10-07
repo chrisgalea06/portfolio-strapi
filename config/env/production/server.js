@@ -11,4 +11,5 @@ module.exports = ({ env }) => ({
       secret: env("ADMIN_JWT_SECRET"),
     },
   },
+  trustProxy: true, // This line ensures Strapi trusts the proxy headers
 });

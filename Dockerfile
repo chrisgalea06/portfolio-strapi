@@ -1,27 +1,47 @@
-# Use the official Node.js image based on Debian Buster
-FROM node:20-buster
+# Stage 1 - Build the app
+FROM node:20-buster AS build
 
-# Install required libraries for sharp
-RUN apt-get update && apt-get install -y \
-    libvips-dev \
-    --no-install-recommends \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# Set working directory
+WORKDIR /opt/
 
-# Set the working directory inside the container
-WORKDIR /app
+# Install dependencies for sharp and other native modules
+RUN apt-get update && apt-get install -y build-essential gcc autoconf automake zlib1g-dev libpng-dev libvips42 git && rm -rf /var/lib/apt/lists/*
 
-# Copy only package.json and package-lock.json (or yarn.lock) first
+# Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --ignore-scripts=false --foreground-scripts --verbose sharp
+# Install global dependencies
+RUN npm install -g node-gyp
 
-# Copy the rest of your application code
+# Increase npm timeout and install production dependencies
+RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --only=production
+
+# Set environment to production for the build
+ENV NODE_ENV=production
+
+# Copy the rest of the application code
 COPY . .
 
-# Expose the port your app will run on
+# Build the application with production configuration
+RUN npm run build
+
+# Stage 2 - Serve the app
+FROM node:20-buster
+
+# Set working directory
+WORKDIR /opt/
+
+# Install runtime dependencies for sharp
+RUN apt-get update && apt-get install -y libvips42 && rm -rf /var/lib/apt/lists/*
+
+# Copy built files from the build stage
+COPY --from=build /opt/ /opt/
+
+# Expose the desired port (replace with your app's actual port)
 EXPOSE 1337
 
+# Set environment to production for runtime
+ENV NODE_ENV=production
+
 # Start the application
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
